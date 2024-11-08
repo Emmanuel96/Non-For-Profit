@@ -1,7 +1,7 @@
 // GrantFormScreen.js
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { styles } from './style';
 
 export default function GrantFormScreen() {
@@ -14,6 +14,7 @@ export default function GrantFormScreen() {
     console.log('Grant Name:', grantName);
     console.log('Grant Amount:', grantAmount);
     console.log('Program:', program);
+    Alert.alert("Grant", `${grantName} ${grantAmount} ${program}`)
   };
 
   return (

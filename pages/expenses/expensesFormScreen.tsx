@@ -1,7 +1,7 @@
 // GrantFormScreen.js
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { styles } from './style';
 
 export default function ExpensesFormScreen() {
@@ -14,6 +14,7 @@ export default function ExpensesFormScreen() {
     console.log('Grant Name:', grantName);
     console.log('Grant Amount:', grantAmount);
     console.log('Program:', program);
+     Alert.alert("Expense", `${grantName} ${grantAmount} ${program}`)
   };
 
   return (
@@ -21,7 +22,7 @@ export default function ExpensesFormScreen() {
       {/* Grant Name Input */}
       <TextInput
         style={styles.input}
-        placeholder="Grant Name"
+        placeholder="Expense Name"
         value={grantName}
         onChangeText={setGrantName}
       />
@@ -29,7 +30,7 @@ export default function ExpensesFormScreen() {
       {/* Grant Amount Input */}
       <TextInput
         style={styles.input}
-        placeholder="Grant Amount"
+        placeholder="Expense Amount"
         value={grantAmount}
         onChangeText={setGrantAmount}
         keyboardType="numeric"
